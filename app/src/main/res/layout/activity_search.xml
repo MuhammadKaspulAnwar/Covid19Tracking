@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".search.SearchActivity">
+
+
+    <ImageView
+        android:id="@+id/back_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/layout_search"
+        android:padding="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow_back" />
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/layout_search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/back_search"
+        app:layout_constraintTop_toTopOf="@+id/back_search" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_search1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_search2"
+        android:layout_width="0dp"
+        android:visibility="gone"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/rv_search1"
+        app:layout_constraintEnd_toEndOf="@+id/rv_search1"
+        app:layout_constraintStart_toStartOf="@+id/rv_search1"
+        app:layout_constraintTop_toTopOf="@+id/rv_search1" />
+</androidx.constraintlayout.widget.ConstraintLayout>

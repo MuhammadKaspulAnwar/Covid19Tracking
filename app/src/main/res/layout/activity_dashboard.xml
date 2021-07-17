@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".dashboard.DashboardActivity">
+
+
+
+    <ImageView
+        android:id="@+id/iv_poster"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/splash" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:text="TextView"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_poster"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/layout_constrain"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_positif1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    app:cardElevation="20dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="16dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="10dp">
+
+
+                    <com.mapbox.mapboxsdk.maps.MapView
+                        android:id="@+id/mapView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </androidx.cardview.widget.CardView>
+
+
+                <Button
+                    android:id="@+id/btn_next"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    style="@style/button"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="@string/buttonProvinsi"
+                    android:drawableRight="@drawable/ic_baseline_double_arrow_24"
+                    android:background="@drawable/button_next"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginLeft="32dp"/>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/tv_meninggal1"
+            style="@style/Textview_kalimat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/meninggal"
+            app:layout_constraintEnd_toEndOf="@+id/tv_meninggal"
+            app:layout_constraintStart_toStartOf="@+id/tv_meninggal"
+            app:layout_constraintTop_toBottomOf="@+id/tv_meninggal" />
+
+        <TextView
+            android:id="@+id/tv_meninggal"
+            style="@style/Textview_Style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:drawableTop="@drawable/ic_death_dead_tombstone_bird_cloud_graveyard_icon_134750"
+            android:drawablePadding="18dp"
+            android:textColor="@color/merah"
+            app:layout_constraintEnd_toEndOf="@+id/tv_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+        <TextView
+            android:id="@+id/tv_positif1"
+            style="@style/Textview_kalimat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/positif"
+            app:layout_constraintEnd_toEndOf="@+id/tv_positif"
+            app:layout_constraintStart_toStartOf="@+id/tv_positif"
+            app:layout_constraintTop_toBottomOf="@+id/tv_positif" />
+
+        <TextView
+            android:id="@+id/tv_positif"
+            style="@style/Textview_Style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_virus_coronavirus_covid_covid_icon_134829"
+            android:drawablePadding="18dp"
+            android:textColor="@color/kuning"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_sembuh"
+            app:layout_constraintEnd_toStartOf="@+id/tv_meninggal"
+            app:layout_constraintStart_toEndOf="@+id/tv_sembuh"
+            app:layout_constraintTop_toTopOf="@+id/tv_sembuh" />
+
+        <TextView
+            android:id="@+id/tv_sembuh1"
+            style="@style/Textview_kalimat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/sembuh"
+            app:layout_constraintEnd_toEndOf="@+id/tv_sembuh"
+            app:layout_constraintStart_toStartOf="@+id/tv_sembuh"
+            app:layout_constraintTop_toBottomOf="@+id/tv_sembuh" />
+
+        <TextView
+            android:id="@+id/tv_sembuh"
+            style="@style/Textview_Style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:drawableTop="@drawable/ic_hands_protect_safe_clean_healthy_wash_covid_icon_141644"
+            android:drawablePadding="18dp"
+            android:textColor="@color/greenDark"
+            app:layout_constraintStart_toStartOf="@+id/tv_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            style="@style/Textview_indonesia"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/button_bluedark"
+            android:drawableLeft="@drawable/ic_travel_holiday_vacation_310_89073"
+            android:drawableRight="@drawable/ic_travel_holiday_vacation_310_89073"
+            android:gravity="center"
+            android:padding="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.529"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
